@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import config, {AppConfig} from 'config';
 import { peopleRouter } from './routes';
 
@@ -17,6 +18,7 @@ const corsOptions = {
     preflightContinue: true,
     optionsSuccessStatus: 200
 };
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // API Routes
